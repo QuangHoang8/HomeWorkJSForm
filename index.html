@@ -1,0 +1,55 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <!-- 2. Form đăng ký 
+
+Tạo một form đăng ký có các trường: tên, mật khẩu, tuổi, địa chỉ
+Kiểm tra xem các trường có rỗng không
+Sau khi đăng ký, lưu các thông tìn vào một object, sau đó thêm vào mảng các người dùng để lúc sau dùng
+Sau khi đăng ký thành công đưa người dùng về trang đăng nhập -->
+    <h2>Bài 1</h2>
+    <form action="action_page.html" onsubmit="return checkForm()">
+      <label for="fName">Full Name:</label><br />
+      <input type="text" name="fName" id="fName" /><br />
+      <label for="passWord">PassWord:</label><br />
+      <input type="text" name="passWord" id="password" /><br />
+      <label for="age">Age:</label><br />
+      <input type="text" name="age" id="age" /><br />
+      <label for="address">Address:</label><br />
+      <input type="text" name="address" id="address" /><br />
+      <br />
+      <button type="submit" onclick="">Đăng ký</button>
+      <p id="demo"></p>
+    </form>
+  </body>
+  <script>
+    function checkForm() {
+      let valueFname = document.getElementById("fName").value;
+      let valuePass = document.getElementById("password").value;
+      let valueAge = document.getElementById("age").value;
+      letvalueAddress = document.getElementById("address").value;
+      if (valueFname == "") {
+        alert("Vui lòng nhập tên của bạn");
+        return false;
+      } else if (valuePass == "") {
+        alert("Vui lòng nhập mật khẩu của bạn");
+        return false;
+      } else if (valueAge == "") {
+        alert("Vui lòng nhập tuổi của bạn");
+        return false;
+      } else if (isNaN(valueAge)) {
+        alert("Vui lòng nhập tuổi dưới dạng số");
+        return false;
+      } else if (valueAddress == "") {
+        alert("Vui lòng nhập địa chỉ của bạn");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</html>
